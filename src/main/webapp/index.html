@@ -17,7 +17,22 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      testAPI();
+      	testAPI();
+	    var token = response.authResponse.accessToken;
+	    var uid = response.authResponse.userID;
+	    if (response.authResponse) {
+	    	FB.api({ method: 'fql.query', query: 'SELECT user_status,friends_status,user_photos,friends_photos,user_location,friends_location FROM permissions WHERE uid=me()' }, function(response) {        
+	    		for(var key in response[0]) {        
+	    		    if(response[0][key] === "1")        
+	    		        console.log(key+' is granted');        
+	    		    else        
+	    		        console.log(key+' is not granted');        
+	    		}        
+	    	});   
+	    	FB.api('/me', 'get', { access_token: token, fields: 'id,name,gender,albums' }, function(response) {
+	    	    console.log(response);
+	    	});
+	    }
     } else {
       // The person is not logged into your app or we are unable to tell.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -36,7 +51,7 @@
 
   window.fbAsyncInit = function() {
   FB.init({
-    appId      : '4763143310',
+    appId      : '10155171276268311',
     cookie     : true,  // enable cookies to allow the server to access 
                         // the session
     xfbml      : true,  // parse social plugins on this page
@@ -73,12 +88,16 @@
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
+	
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
+
+    //
+    //
   }
 </script>
 
