@@ -16,3 +16,4 @@ rebel.xml
 # Java Errors
 hs_err_pid*
 /.apt_generated/
+/build/
