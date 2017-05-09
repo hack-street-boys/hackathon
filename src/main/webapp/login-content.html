@@ -1,6 +1,12 @@
 
 
- <fb:login-button show-faces="true" max-rows="1" size="large"></fb:login-button>
+ <fb:login-button show-faces="true" max-rows="1" size="large" autologoutlink="true" >
+ 
+ Connect with Facebook
  
  
- {{vm.lastName}}
+ </fb:login-button>
+ 
+ 
+<button class="btn btn-primary" ng-click="vm.goToApp()">Proceed</button>
+<button class="btn btn-primary" ng-click="vm.deAuth()">Deauthorize Facebook</button>

@@ -5,20 +5,22 @@
 		.module("fbApp")
 		.controller("LoginController", LoginController);
 
-	LoginController.$inject = ["$state"];
+	LoginController.$inject = ["$state", "facebookService"];
 	/* @ngInject */
-	function LoginController($state) {
+	function LoginController($state, facebookService) {
 		var vm = this;
 	
-		vm.getMyLastName = getMyLastName;
+		vm.goToApp = goToApp;
+		vm.deAuth = deAuth;
 		
-
-		function getMyLastName() {
-			facebookService.getMyLastName().then(function(response) {
-				vm.lastName = response.last_name;
-			});
+		function goToApp() {
+			$state.go("app");
 		}
+		
+		function deAuth() {
+			facebookService.deAuth();
 			
+		}
 	}
 
 })();

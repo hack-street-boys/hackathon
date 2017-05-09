@@ -10,20 +10,18 @@
 	function loginRouter($stateProvider, $urlRouterProvider) {
 		
 		$stateProvider
-			.state("login", {
-				url: "",
-				templateUrl: "login-content.html",
-				controller: "LoginController",
-				controllerAs: "vm",
-				params: {
-//					userObj: {}
-				},
-				resolve: {
-//					userObj: ["$stateParams", "loginService", function($stateParams, loginService) {
-//						return loginService.login($stateParams.userObj);
-//					}]
-				}
-			});
+		.state("login", {
+			url: "",
+			templateUrl: "login-content.html",
+			controller: "LoginController",
+			controllerAs: "vm",
+		})
+		.state("app", {
+			url: "/app",
+			templateUrl: "app-content.html",
+			controller: "AppController",
+			controllerAs: "vm",
+		});
 //			
 	}
 })();
