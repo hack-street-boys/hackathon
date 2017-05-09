@@ -21,7 +21,16 @@
 			templateUrl: "app-content.html",
 			controller: "AppController",
 			controllerAs: "vm",
+			params: {
+				user: null
+			},
+			resolve: {
+				user: ["$stateParams", "facebookService", function($stateParams, facebookService) {
+					return facebookService.getMyLastName();
+					
+				}]
+			}
 		});
-//			
+		
 	}
 })();
