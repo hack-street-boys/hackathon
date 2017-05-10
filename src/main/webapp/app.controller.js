@@ -10,6 +10,7 @@
 	function AppController($state, facebookService, user) {
 		var vm = this;
 		vm.cleanData = [];
+		vm.imageList = [];
 		vm.user = user;
 		vm.profilePicture = user.picture.data;
 		vm.filterCheck = function () {
@@ -47,6 +48,13 @@
 			    var ageDate = new Date(ageDifMs); // miliseconds from epoch
 			    return Math.abs(ageDate.getUTCFullYear() - 1970);
 		 };
+		 vm.buildImageList = function(myObj){
+			 console.log(myObj.attributes("class"));
+			 if(vm.imageList.length >= 5){
+				 vm.imageList.splice(0, 1);
+			 }
+			 vm.imageList.push(myObj.image.source);
+		 }
 		vm.filterCheck();
 	}
 
