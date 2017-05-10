@@ -22,6 +22,11 @@
     
 </head>
 <body>
+
+<!--  
+<p>Name: {{vm.user.name}}</p>
+<p>User: {{vm.user}}</p>
+-->
 <!-- Main container -->
 <div class="page-container">
     
@@ -65,10 +70,10 @@
 			</div>
 			<div class="col-xs-12 col-md-8 col-md-offset-2">
 				<h3 class="statement-bloc-text  tc-white">
-					John Smith
+					{{vm.user.name}}
 				</h3>
 				<p class="text-center ">
-					<strong>40 years old <br>Male</strong>
+					<strong>40 years old <br>{{vm.user.gender}}</strong>
 				</p>
 			</div>
 		</div>
@@ -116,6 +121,21 @@
 				<p class="sub-heading  text-left">
 					Choose the best images that represent you.
 				</p>
+			</div>
+		</div>
+		<div ng-repeat="albums in vm.photos">
+			
+				<div ng-repeat="photos in albums.data">
+				<div class="row voffset">
+					<div ng-repeat="picture in photos.photos.data|limitTo:4">	
+					
+						<div ng-repeat="image in picture.images | filter: { width: '720', height: '720' }">
+						<div class="col-sm-3">
+								<a href="#" data-lightbox="img/placeholder-image.png" data-caption="Image description" data-gallery-id="gallery-1"><img src="{{image.source}}" class="img-circle img-responsive" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row voffset">

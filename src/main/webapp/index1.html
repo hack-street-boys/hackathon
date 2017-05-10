@@ -13,6 +13,14 @@
 	<script src="./js/jquery-2.1.0.min.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
 	<script src="./js/blocs.min.js"></script>
+	<script src="/webjars/angularjs/angular.js"></script>
+	<script src="/webjars/angular-ui-router/angular-ui-router.min.js"></script>
+	<script src="http://connect.facebook.net/en_US/sdk.js"></script>
+	<script src="app.module.js"></script>
+	<script src="routes.js"></script>
+	<script src="facebook.service.js"></script>
+	<script src="login.controller.js"></script>
+	<script src="app.controller.js"></script>
     <title>Home</title>
 
     
@@ -77,7 +85,10 @@
 				</h1>
 				<h3 class="text-left mg-lg mount-italy-hero-text-sub-s  tc-white">
 					No long forms, just the power of machine learning
-				</h3><a href="index.html" class="btn btn-sq btn-wire btn-lg wire-btn-white">CONNECT TO FACEBOOK</a>
+				</h3>
+				<div id="login" ng-app="fbApp" ng-cloak>
+					<div ui-view></div>
+				</div>
 			</div>
 			<div class="col-sm-7">
 				<div class="center-block blocsapp-device blocsapp-device-iphone5 iphone-white">
