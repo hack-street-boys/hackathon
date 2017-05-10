@@ -37,15 +37,17 @@
 			controllerAs: "vm",
 			params: {
 				user: null,
-				images: null
+				imageList: null
 			},
 			resolve: {
-				images: ["$stateParams", "imageService", function($stateParams, imageService) {
-					return imageService.getImages();
+				imageList: ["$stateParams", "imageService", function($stateParams, imageService) {
+					console.log("router");
+					console.log($stateParams.imageList);
+					return imageService.getImages($stateParams.imageList);
 				}],
 				user: ["$stateParams", function($stateParams) {
-				return $stateParams.user;
-			}]
+					return $stateParams.user;
+				}]
 			}
 		});
 		

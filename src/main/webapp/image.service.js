@@ -4,8 +4,8 @@
 	angular.module("fbApp")
 	.factory('imageService', function($q, $http) {
     return {
-    	getImages: function() {
-            var images = [];
+    	getImages: function(imageList) {
+            var images = imageList;
             return images;
         }
     }

@@ -10,7 +10,7 @@
 	<div class="container bloc-lg">
 		<div class="row">
 			<div class="col-sm-2 col-sm-offset-5 col-xs-6 col-xs-offset-3">
-				<img src="img/headshot-troy-block-600x600.jpg" class="img-responsive img-circle" />
+				<img src="{{vm.user.picture.data.url}}" class="img-responsive img-circle" />
 			</div>
 			<div class="col-xs-12 col-md-8 col-md-offset-2">
 				<h3 class="statement-bloc-text  tc-white">
@@ -69,7 +69,7 @@
 		</div>
 		<div  class="row voffset" ng-repeat="photos in vm.cleanData track by $index">
 				<div class="col-sm-3" ng-repeat="image in photos">
-					<a href="javascript:;" class="light-item" data-caption="Image description" data-gallery-id="gallery-{{$index}}"><img src="{{image.source}}" class="img-circle img-responsive" /></a>
+					<a href="javascript:;" class="light-item" ng-click="vm.buildImageList(this);" data-caption="Image description" data-gallery-id="gallery-{{$index}}"><img src="{{image.source}}" class="img-circle img-responsive" /></a>
 				</div>
 		</div>
 	</div>
