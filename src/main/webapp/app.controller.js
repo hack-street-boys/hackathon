@@ -39,7 +39,13 @@
 			  for (var i=0,len=arr.length; i<len; i+=chunkSize)
 			    R.push(arr.slice(i,i+chunkSize));
 			  return R;
-		  }
+		  };
+		  vm.calculateAge = function () { // birthday is a date
+			  	var myBday = new Date(vm.user.birthday);
+			    var ageDifMs = Date.now() - myBday.getTime();
+			    var ageDate = new Date(ageDifMs); // miliseconds from epoch
+			    return Math.abs(ageDate.getUTCFullYear() - 1970);
+		 }
 	}
 
 })();

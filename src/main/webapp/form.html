@@ -13,6 +13,7 @@
 	<script src="./js/jquery-2.1.0.min.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
 	<script src="./js/blocs.min.js"></script>
+	<script src="./js/form.js"></script>
     <title>Form</title>
 
     
@@ -73,7 +74,7 @@
 					{{vm.user.name}}
 				</h3>
 				<p class="text-center ">
-					<strong>40 years old <br>{{vm.user.gender}}</strong>
+					<strong>{{vm.calculateAge()}} years old <br>{{vm.user.gender}}</strong>
 				</p>
 			</div>
 		</div>
@@ -183,6 +184,8 @@
 </div>
 <!-- Main container END -->
     
+<script>
 
+</script>
 </body>
 </html>
