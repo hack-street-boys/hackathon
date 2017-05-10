@@ -27,10 +27,6 @@
 			resolve: {
 				user: ["$stateParams", "facebookService", function($stateParams, facebookService) {
 					return facebookService.getMyLastName();
-					
-				}],
-				photos: ["$stateParams", "facebookService", function($stateParams, facebookService) {
-					return facebookService.getPhotos();
 				}]
 			}
 		});

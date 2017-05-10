@@ -7,7 +7,7 @@
     	getMyLastName: function() {
             var deferred = $q.defer();
             FB.api('/me', {
-               fields: 'id,name,gender,education,email,birthday'
+               fields: 'id,name,gender,education,email,birthday,picture.width(400).height(400),albums{photos.limit(10){picture,images}}'
             }, function(response) {
                 if (!response || response.error) {
                     deferred.reject('Error occured');
@@ -16,25 +16,6 @@
                 }
             });
             return deferred.promise;
-        },
-        getPhotos: function() {
-        	var deferred = $q.defer();
-        	FB.api('/me/', { fields: 'albums{photos.limit(10){picture,images}}' }, function(response) {
-        		if (!response || response.error) {
-        			deferred.reject('Error occured');
-        		} else {
-//        			angular.forEach(vm.funds, function(fund) {
-//    					if (fund.sellAllShares) {
-//    						vm.transaction.sellAllShares = true;
-//    					}
-//    					if (fund.hasAutomaticPlan) {
-//    						vm.transaction.hasAutomaticPlan = true;
-//    					}
-//    				});
-        			deferred.resolve(response);	
-        		}
-        	});
-        	return deferred.promise;
         },
         deAuth: function() {
         	var deferred = $q.defer();

@@ -1,15 +1,14 @@
 <p>Name: {{vm.user.name}}</p>
 
+<div>Picture:<br />
+<img src="{{vm.user.picture.data.url}}" width="{{vm.user.picture.data.width}}" height="{{vm.user.picture.data.height}}" /></div>
 
-<p>User: {{vm.user}}</p>
-
-
-<div ng-repeat="albums in vm.photos">
-	<div ng-repeat="photos in albums.data">
-		<div ng-repeat="picture in photos.photos.data|limitTo:1">
-			<div ng-repeat="image in picture.images | filter: { width: '426' }">
-				<img src="{{image.source}}" />
-			</div>
+<div>Photos from Albums: <br />
+<div ng-repeat="albums in vm.user.albums.data">
+	<div ng-repeat="picture in albums.photos.data|limitTo:1">
+		<div ng-repeat="image in picture.images | filter: { width: '426' }">
+			<img src="{{image.source}}" width="{{image.width}}" height="{{image.height}}" />
 		</div>
 	</div>
+</div>
 </div>
