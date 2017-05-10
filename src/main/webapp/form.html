@@ -13,6 +13,7 @@
 	<script src="./js/jquery-2.1.0.min.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
 	<script src="./js/blocs.min.js"></script>
+	<script src="./js/form.js"></script>
     <title>Form</title>
 
     
@@ -22,6 +23,11 @@
     
 </head>
 <body>
+
+<!--  
+<p>Name: {{vm.user.name}}</p>
+<p>User: {{vm.user}}</p>
+-->
 <!-- Main container -->
 <div class="page-container">
     
@@ -65,10 +71,10 @@
 			</div>
 			<div class="col-xs-12 col-md-8 col-md-offset-2">
 				<h3 class="statement-bloc-text  tc-white">
-					John Smith
+					{{vm.user.name}}
 				</h3>
 				<p class="text-center ">
-					<strong>40 years old <br>Male</strong>
+					<strong>{{vm.calculateAge()}} years old <br>{{vm.user.gender}}</strong>
 				</p>
 			</div>
 		</div>
@@ -118,33 +124,10 @@
 				</p>
 			</div>
 		</div>
-		<div class="row voffset">
-			<div class="col-sm-3">
-				<a href="#" data-lightbox="img/placeholder-image.png" data-caption="Image description" data-gallery-id="gallery-1"><img src="img/placeholder-image-sq.png" class="img-circle img-responsive" /></a>
-			</div>
-			<div class="col-sm-3">
-				<a href="#" data-lightbox="img/placeholder-image.png" data-caption="Image description" data-gallery-id="gallery-1"><img src="img/placeholder-image-sq.png" class="img-circle img-responsive" /></a>
-			</div>
-			<div class="col-sm-3">
-				<a href="#" data-lightbox="img/placeholder-image.png" data-caption="Image description" data-gallery-id="gallery-1"><img src="img/placeholder-image-sq.png" class="img-circle img-responsive" /></a>
-			</div>
-			<div class="col-sm-3">
-				<a href="#" data-lightbox="img/placeholder-image.png" data-caption="Image description" data-gallery-id="gallery-1"><img src="img/placeholder-image-sq.png" class="img-circle img-responsive" /></a>
-			</div>
-		</div>
-		<div class="row voffset">
-			<div class="col-sm-3">
-				<a href="#" data-lightbox="img/placeholder-image.png" data-caption="Image description" data-gallery-id="gallery-1"><img src="img/placeholder-image-sq.png" class="img-circle img-responsive" /></a>
-			</div>
-			<div class="col-sm-3">
-				<a href="#" data-lightbox="img/placeholder-image.png" data-caption="Image description" data-gallery-id="gallery-1"><img src="img/placeholder-image-sq.png" class="img-circle img-responsive" /></a>
-			</div>
-			<div class="col-sm-3">
-				<a href="#" data-lightbox="img/placeholder-image.png" data-caption="Image description" data-gallery-id="gallery-1"><img src="img/placeholder-image-sq.png" class="img-circle img-responsive" /></a>
-			</div>
-			<div class="col-sm-3">
-				<a href="#" data-lightbox="img/placeholder-image.png" data-caption="Image description" data-gallery-id="gallery-1"><img src="img/placeholder-image-sq.png" class="img-circle img-responsive" /></a>
-			</div>
+		<div  class="row voffset" ng-repeat="photos in vm.filterCheck() track by $index">
+				<div class="col-sm-3" ng-repeat="image in photos">
+					<a href="#" data-lightbox="img/placeholder-image.png" data-caption="Image description" data-gallery-id="gallery-{{$index}}"><img src="{{image.source}}" class="img-circle img-responsive" /></a>
+				</div>
 		</div>
 	</div>
 </div>
@@ -201,6 +184,8 @@
 </div>
 <!-- Main container END -->
     
+<script>
 
+</script>
 </body>
 </html>
