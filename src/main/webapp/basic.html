@@ -11,7 +11,8 @@
         </div>
         <script>
             var app = angular.module('myApp', []);
-            app.run(['$rootScope', '$window', 'srvAuth',
+            app.service('srvAuth', function () { /* ... */ })
+                .run(['$rootScope', '$window', 'srvAuth',
   function($rootScope, $window, sAuth) {
 
   $rootScope.user = {};
@@ -27,7 +28,7 @@
        ( https://developers.facebook.com/apps/ )
       */
 
-      appId: '***************',
+      appId: '10155171276268311',
 
       /*
        Adding a Channel File improves the performance
@@ -35,7 +36,7 @@
        with cross-domain communication in certain browsers.
       */
 
-      channelUrl: 'app/channel.html',
+      channelUrl: 'channel.html',
 
       /*
        Set if you want to check the authentication status
@@ -140,6 +141,8 @@
               });
 
             } 
+            
+        
         </script>
     </body>
 </html>
