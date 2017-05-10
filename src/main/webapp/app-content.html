@@ -1,3 +1,16 @@
 <p>Name: {{vm.user.name}}</p>
 
-Photos: {{vm.photos}}
+<img src="{{vm.photos.url}}" />
+
+<p>User: {{vm.user}}</p>
+
+
+<div ng-repeat="albums in vm.photos">
+	<div ng-repeat="photos in albums.data">
+		<div ng-repeat="picture in photos.photos.data|limitTo:1">
+			<div ng-repeat="image in picture.images | filter: { width: '426' }">
+				<img src="{{image.source}}" />
+			</div>
+		</div>
+	</div>
+</div>

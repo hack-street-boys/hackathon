@@ -5,21 +5,13 @@
 		.module("fbApp")
 		.controller("AppController", AppController);
 
-	AppController.$inject = ["$state", "facebookService", "user"];
+	AppController.$inject = ["$state", "facebookService", "user", "photos"];
 	/* @ngInject */
-	function AppController($state, facebookService, user) {
+	function AppController($state, facebookService, user, photos) {
 		var vm = this;
 		
 		vm.user = user;
-	
-//		facebookService.getMyLastName().then(function(response) {
-//			vm.lastName = response.last_name;
-//		});
-		
-		facebookService.getPhotos().then(function(response) {
-			vm.photos = response.data
-		});
-		
+		vm.photos = photos;
 		
 	}
 
