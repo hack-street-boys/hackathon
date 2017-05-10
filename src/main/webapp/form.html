@@ -2,6 +2,9 @@
 <p>Name: {{vm.user.name}}</p>
 <p>User: {{vm.user}}</p>
 -->
+<button class="btn btn-primary" ng-click="vm.goToResults()">Results</button>
+
+
 <!-- bloc-2 -->
 <div class="bloc bg-forrest tc-white bgc-white bloc-bg-texture texture-darken" id="bloc-2">
 	<div class="container bloc-lg">
@@ -64,9 +67,9 @@
 				</p>
 			</div>
 		</div>
-		<div  class="row voffset" ng-repeat="photos in vm.filterCheck() track by $index">
+		<div  class="row voffset" ng-repeat="photos in vm.cleanData track by $index">
 				<div class="col-sm-3" ng-repeat="image in photos">
-					<a href="#" class="light-item" data-lightbox="img/placeholder-image.png" data-caption="Image description" data-gallery-id="gallery-{{$index}}"><img src="{{image.source}}" class="img-circle img-responsive" /></a>
+					<a href="javascript:;" class="light-item" data-caption="Image description" data-gallery-id="gallery-{{$index}}"><img src="{{image.source}}" class="img-circle img-responsive" /></a>
 				</div>
 		</div>
 	</div>

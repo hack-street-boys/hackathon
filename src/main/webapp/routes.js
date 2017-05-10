@@ -29,6 +29,24 @@
 					return facebookService.getMyLastName();
 				}]
 			}
+		})
+		.state("results", {
+			url: "/results",
+			templateUrl: "results.html",
+			controller: "ResultsController",
+			controllerAs: "vm",
+			params: {
+				user: null,
+				images: null
+			},
+			resolve: {
+				images: ["$stateParams", "imageService", function($stateParams, imageService) {
+					return imageService.getImages();
+				}],
+				user: ["$stateParams", function($stateParams) {
+				return $stateParams.user;
+			}]
+			}
 		});
 		
 	}

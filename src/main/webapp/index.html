@@ -10,18 +10,24 @@
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css"><link rel="stylesheet" href="./css/font-awesome.min.css"><link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="style.css">
 
-<script src="/webjars/angularjs/angular.js"></script>
-<script src="/webjars/angular-ui-router/angular-ui-router.min.js"></script>
-<script src="http://connect.facebook.net/en_US/sdk.js"></script>
-<script src="/webjars/jquery/jquery.js"></script>
-<script src="./js/form.js"></script>
-<script src="app.module.js"></script>
-<script src="routes.js"></script>
-<script src="facebook.service.js"></script>
-<script src="login.controller.js"></script>
-<script src="app.controller.js"></script>
+	<script src="./js/form.js"></script>
+	<script src="/webjars/angularjs/angular.js"></script>
+	<script src="/webjars/angular-ui-router/angular-ui-router.min.js"></script>
+	<script src="http://connect.facebook.net/en_US/sdk.js"></script>
+	<script src="app.module.js"></script>
+	<script src="routes.js"></script>
+	<script src="facebook.service.js"></script>
+	<script src="image.service.js"></script>
+	<script src="login.controller.js"></script>
+	<script src="results.controller.js"></script>
+	<script src="app.controller.js"></script>
+	<script src="./js/jquery-2.1.0.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/blocs.min.js"></script>
 </head>
 
 <body>
@@ -99,5 +105,16 @@
 
 </div>
 <!-- Main container END -->
+
+<script>
+$(document).ready(function() {
+	$(document).on("click", ".light-item", function(e) {
+		  e.preventDefault();
+		  e.stopPropagation();
+		  $(this).find("img").toggleClass("highlight-image");
+		  return false;
+	});
+});
+</script>
 </body>
 </html>

@@ -12,10 +12,12 @@
 		
 		var CV_URL = "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBqOBXQ6mRoCDxLyB6gBRyvAeoD_p2FmZ8";
 		
+		vm.cleanData = [];
 		vm.user = user;
 		vm.profilePicture = user.picture.data;
+		
 		vm.filterCheck = function () {
-           var cleanedData = [];
+			var cleanedData = [];
             var cleanPhotos = user.albums.data;
             var imageList, image2;
             for(var i=0;i<cleanPhotos.length;i++){
@@ -34,7 +36,8 @@
                 	}
                 }
             }
-            return vm.chunk(cleanedData,4);
+            vm.cleanData = vm.chunk(cleanedData,4);
+            return vm.cleanData;
           };
 		  vm.chunk = function (arr, chunkSize) {
 			  var R = [];
@@ -47,7 +50,9 @@
 			    var ageDifMs = Date.now() - myBday.getTime();
 			    var ageDate = new Date(ageDifMs); // miliseconds from epoch
 			    return Math.abs(ageDate.getUTCFullYear() - 1970);
+
 		 }
+		  vm.filterCheck();
 		 
 
 		  vm.getImageMetaData = function() {
@@ -100,8 +105,13 @@
 			});
 			  
 		  }
-			  
-			 
+		
+		  vm.goToResults = goToResults;
+			
+			function goToResults() {
+				$state.go("results", {user: user});
+			}
+	
 	}
 
 })();
