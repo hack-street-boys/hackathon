@@ -1,12 +1,47 @@
+<!-- bloc-1 -->
+<div class="bloc bloc-fill-screen bg-lake bloc-bg-texture texture-darken bgc-white l-bloc" id="bloc-1">
+	<div class="container fill-bloc-top-edge">
+		<nav class="navbar row">
+			<div class="navbar-header">
+				<button id="nav-toggle" type="button" class="ui-navbar-toggle navbar-toggle" data-toggle="collapse" data-target=".navbar-1">
+					<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse navbar-1">
+			</div>
+		</nav>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-5">
+				<h1 class="mount-italy-hero-text-s text-left hero-text-vc  tc-white">
+					PERSONALIZED RECOMMENDATIONS
+				</h1>
+				<h3 class="text-left mg-lg mount-italy-hero-text-sub-s  tc-white">
+					No long forms, just the power of machine learning
+				</h3>
+				<div class="fb-container">
+				 <fb:login-button show-faces="true" max-rows="1" size="large" data-scope="public_profile,email,user_friends,user_birthday,user_education_history,user_photos,user_hometown,user_location,user_tagged_places,user_status" autologoutlink="true">
+			 Connect with Facebook
+ 			</fb:login-button>
+			<button class="btn btn-primary" ng-click="vm.goToApp()">Proceed</button>
+			<button class="btn btn-primary" ng-click="vm.deAuth()">Deauthorize Facebook</button>
+			</div>
+			</div>
+			<div class="col-sm-7">
+				<div class="center-block blocsapp-device blocsapp-device-iphone5 iphone-white">
+					<img src="img/iphone-screen.png" class="img-responsive" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container fill-bloc-bottom-edge">
+		<div class="row">
+			<div class="col-sm-12">
+				<a id="scroll-hero" class="blocs-hero-btn-dwn" href="#"><span class="fa fa-chevron-down"></span></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-1 END -->
 
-
- <fb:login-button show-faces="true" max-rows="1" size="large" data-scope="public_profile,email,user_friends,user_birthday,user_education_history,user_photos,user_hometown,user_location,user_tagged_places,user_status" autologoutlink="true">
- 
- Connect with Facebook
- 
- 
- </fb:login-button>
- 
- 
-<button class="btn btn-primary" ng-click="vm.goToApp()">Proceed</button>
-<button class="btn btn-primary" ng-click="vm.deAuth()">Deauthorize Facebook</button>
