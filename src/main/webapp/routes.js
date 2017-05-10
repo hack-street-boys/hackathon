@@ -18,7 +18,7 @@
 		})
 		.state("app", {
 			url: "/app",
-			templateUrl: "app-content.html",
+			templateUrl: "form.html",
 			controller: "AppController",
 			controllerAs: "vm",
 			params: {
