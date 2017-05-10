@@ -12,12 +12,8 @@
 		
 		 vm.imageList = imageList;
 		 vm.user = user;
-		 console.log("controller");
-		 console.log(user);
+		
 		 console.log(imageList);
-
-
-			 
 	
 	}
 

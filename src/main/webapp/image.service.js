@@ -8,30 +8,16 @@
     return {
     	getImages: function(imageList) {
             var images = imageList;
+            var metaDataImages = [];
     		
             angular.forEach(imageList, function(url) {
-            	
             	var metaData = getImageMetaData(url).then(function(metaData) {
-            			console.log(metaData);
-					}, function(error) {
-						console.log(error);
+            		metaDataImages.push({image: url, metaData: metaData.responses[0]});
+				}, function(error) {
+					console.log(error);
 				});
-            	
-            	
-            	
-            });
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            return images;
+            });     
+            return metaDataImages;
     	}
     }
     
@@ -74,7 +60,6 @@
 				
 				
 				 return $http.post(CV_URL, JSON.stringify(request)).then(function(response) {
-					 console.log(response.data);
 						return response.data;
 					}, function(error) {
 						console.log(error);

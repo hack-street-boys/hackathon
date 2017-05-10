@@ -41,8 +41,6 @@
 			},
 			resolve: {
 				imageList: ["$stateParams", "imageService", function($stateParams, imageService) {
-					console.log("router");
-					console.log($stateParams.imageList);
 					return imageService.getImages($stateParams.imageList);
 				}],
 				user: ["$stateParams", function($stateParams) {
