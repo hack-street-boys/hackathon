@@ -66,7 +66,7 @@
 		</div>
 		<div  class="row voffset" ng-repeat="photos in vm.cleanData track by $index">
 				<div class="col-sm-3" ng-repeat="image in photos">
-					<a href="javascript:;" class="light-item" ng-click="vm.highlightImage()" data-caption="Image description" data-gallery-id="gallery-{{$index}}"><img src="{{image.source}}" class="img-circle img-responsive" /></a>
+					<a href="javascript:;" class="light-item" data-caption="Image description" data-gallery-id="gallery-{{$index}}"><img src="{{image.source}}" class="img-circle img-responsive" /></a>
 				</div>
 		</div>
 	</div>

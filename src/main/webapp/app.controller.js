@@ -47,10 +47,6 @@
 			    var ageDate = new Date(ageDifMs); // miliseconds from epoch
 			    return Math.abs(ageDate.getUTCFullYear() - 1970);
 		 };
-		vm.hilightImage = function(e){
-			e.stopPropagation();
-		    alert("what");
-		}
 		vm.filterCheck();
 	}
 
