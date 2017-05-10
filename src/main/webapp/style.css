@@ -3,6 +3,12 @@
         Built with Blocs
 -----------------------------------------------------------------------------------*/
 
+.highlight-image {
+	border-width: 6px;
+	border-color: chartreuse;
+	border-style: solid;
+}
+
 body{
 	margin:0;
 	padding:0;
@@ -57,8 +63,8 @@ a,button{outline: none!important;} /* Prevent ugly blue glow on chrome and safar
 .bloc-fill-screen > .container{
 	position:relative;
 	top:50%;
-	padding-top: 60px;
-    padding-bottom: 60px;
+	transform:translateY(-50%);
+	-webkit-transform:translateY(-50%);
 }
 .bloc-fill-screen.bloc-group .bloc{
 	vertical-align: middle!important;
@@ -917,4 +923,3 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 	text-align:center;
 }
  }
-

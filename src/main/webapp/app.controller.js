@@ -9,11 +9,11 @@
 	/* @ngInject */
 	function AppController($state, facebookService, user) {
 		var vm = this;
-		
+		vm.cleanData = [];
 		vm.user = user;
 		vm.profilePicture = user.picture.data;
 		vm.filterCheck = function () {
-           var cleanedData = [];
+			var cleanedData = [];
             var cleanPhotos = user.albums.data;
             var imageList, image2;
             for(var i=0;i<cleanPhotos.length;i++){
@@ -32,7 +32,8 @@
                 	}
                 }
             }
-            return vm.chunk(cleanedData,4);
+            vm.cleanData = vm.chunk(cleanedData,4);
+            return vm.cleanData;
           };
 		  vm.chunk = function (arr, chunkSize) {
 			  var R = [];
@@ -45,7 +46,12 @@
 			    var ageDifMs = Date.now() - myBday.getTime();
 			    var ageDate = new Date(ageDifMs); // miliseconds from epoch
 			    return Math.abs(ageDate.getUTCFullYear() - 1970);
-		 }
+		 };
+		vm.hilightImage = function(e){
+			e.stopPropagation();
+		    alert("what");
+		}
+		vm.filterCheck();
 	}
 
 })();
