@@ -22,11 +22,13 @@
 					No long forms, just the power of machine learning
 				</h3>
 				<div class="fb-container">
-				 <fb:login-button show-faces="true" max-rows="1" size="large" data-scope="public_profile,email,user_friends,user_birthday,user_education_history,user_photos,user_hometown,user_location,user_tagged_places,user_status" autologoutlink="true">
+			<fb:login-button show-faces="false" max-rows="1" size="xlarge" data-scope="public_profile,email,user_friends,user_birthday,user_education_history,user_photos,user_hometown,user_location,user_tagged_places,user_status" autologoutlink="true">
 			 Connect with Facebook
  			</fb:login-button>
-			<button class="btn btn-primary" ng-click="vm.goToApp()">Proceed</button>
-			<button class="btn btn-primary" ng-click="vm.deAuth()">Deauthorize Facebook</button>
+ 			<div style="padding-top: 20px" class="proceedBtns">
+			<button class="btn btn-xl btn-sq btn-wire wire-btn-white"  ng-click="vm.goToApp()">Proceed</button>
+			<button class="btn btn-xl btn-sq btn-wire wire-btn-white"  ng-click="vm.deAuth()">Deauthorize Facebook</button>
+			</div>
 			</div>
 			</div>
 			<div class="col-sm-7">
