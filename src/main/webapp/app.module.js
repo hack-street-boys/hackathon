@@ -15,6 +15,7 @@
 	])
 	.run(['$rootScope', '$window',
         function($rootScope, $window) {
+		
 			$window.fbAsyncInit = function() {
 			    FB.init({ 
 			      appId: '1727111137586551',

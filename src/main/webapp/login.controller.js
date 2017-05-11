@@ -5,9 +5,9 @@
 		.module("fbApp")
 		.controller("LoginController", LoginController);
 
-	LoginController.$inject = ["$state", "facebookService"];
+	LoginController.$inject = ["$state", "facebookService", "$anchorScroll"];
 	/* @ngInject */
-	function LoginController($state, facebookService) {
+	function LoginController($state, facebookService, $anchorScroll) {
 		var vm = this;
 	
 		vm.goToApp = goToApp;
@@ -15,6 +15,7 @@
 		
 		function goToApp() {
 			$state.go("app");
+			$anchorScroll("body");
 		}
 		
 		function deAuth() {

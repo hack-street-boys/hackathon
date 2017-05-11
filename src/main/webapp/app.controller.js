@@ -5,9 +5,9 @@
 		.module("fbApp")
 		.controller("AppController", AppController);
 
-	AppController.$inject = ["$state", "facebookService", "user", "$http"];
+	AppController.$inject = ["$state", "facebookService", "user", "$http", "$anchorScroll"];
 	/* @ngInject */
-	function AppController($state, facebookService, user, $http) {
+	function AppController($state, facebookService, user, $http, $anchorScroll) {
 		var vm = this;
 		
 		var CV_URL = "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBqOBXQ6mRoCDxLyB6gBRyvAeoD_p2FmZ8";
@@ -68,6 +68,7 @@
 			function goToResults() {
 				//console.log(vm.imageList);
 				$state.go("results", {user: vm.user, imageList: vm.imageList});
+				$anchorScroll("body");
 			}
 	
 
